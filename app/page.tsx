@@ -1,95 +1,34 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
+import React from 'react'
+import Link from 'next/link'
+import cssstyle from './home.module.css'
+import Image from 'next/image'
+import logo from './logo.png'
+console.log(cssstyle)
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <>
+        <div className={cssstyle.homeBody}>
+        <nav className={cssstyle.navbar} >
+        <Link href="/"  id={cssstyle.logo}>RENT & REV</Link>
+         <Link href="/" id={cssstyle.home}>Home</Link>
+         <Link href="/about" target='plane' id={cssstyle.about}>About</Link>
+        <Link href="/services" target='plane'  id={cssstyle.services}>Services</Link>
+        <Link href="/contact" target='palne' id={cssstyle.contactus}>Contact</Link>  
+         </nav>
+        <br />
+         <div className={cssstyle.maincontainer}> 
+         <div className={cssstyle.imagecontainer}>
+          <Image
+          src={logo}
+           alt="Logo"
+           className={cssstyle.logoimage}/>
+         </div>
+          <div className={cssstyle.overview}> 
+        <h2 className={cssstyle.h2}>Welcome to RENT & REV – Your Trusted Car Marketplace</h2>
+        <p>At RENT & REV, we simplify buying, selling, and renting cars. Explore a wide range of vehicles, connect with verified sellers, and enjoy hassle-free rentals. Whether you're upgrading, selling, or renting, we offer reliable solutions to meet your needs. Drive with confidence through RENT & REV.</p>
+          </div> 
+          </div> 
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+         </>
   );
-}
+};
